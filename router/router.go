@@ -24,7 +24,7 @@ func InitRouter(r *gin.Engine) {
 			fileRouter.DELETE("/", ctr.FileManagement.DeleteDir)    // 删除目录或者文件
 		}
 	}
-	r.GET("/", func(ctx *gin.Context) {
+	r.GET("/index", func(ctx *gin.Context) {
 		ctx.HTML(http.StatusOK, "index.html", nil)
 	})
 
