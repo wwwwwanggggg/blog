@@ -1,13 +1,9 @@
-on:
-  push:
-    branches: ["main"]
-
+on: push
 jobs:
-  runs-on: windows-latest
-
-  steps:
-    - name: test
-      run: node --version
-    
-    - name: hello
-      run: echo Hello_World
+  job1:
+    runs-on: windows-latest
+    steps:
+      - name: Check Node.js version
+        run: node --version
+      - name: Test
+        run: echo "Running tests..."
