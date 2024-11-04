@@ -10,6 +10,9 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      - name: read repo
+        uses: actions/checkout@v4
+
       - name: deploy
         # uses: actions/checkout@v2
         run: |
