@@ -7,3 +7,9 @@ jobs:
         run: node --version
       - name: Test
         run: echo "Running tests..."
+      - name: download dependency
+        run: go mod tidy
+      - name: build
+        run: go build -o myapp
+      - name: deploy
+        run: echo "Deploying"
