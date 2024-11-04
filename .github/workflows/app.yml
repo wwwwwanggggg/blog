@@ -23,8 +23,8 @@ jobs:
           go mod tidy
           go build
       
-      - name: deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with: 
-          branch: gh-pages
-          folder: build
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./main.exe
