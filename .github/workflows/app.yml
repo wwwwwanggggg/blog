@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: windows-latest
@@ -13,10 +16,15 @@ jobs:
       - name: read repo
         uses: actions/checkout@v4
 
-      - name: deploy
+      - name: init 
         # uses: actions/checkout@v2
         run: |
           go mod init blog
           go mod tidy
           go build
-
+      
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with: 
+          branch: gh-pages
+          folder: build
