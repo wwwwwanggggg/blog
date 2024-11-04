@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: deploy
-        uses: actions/checkout@v2
+        # uses: actions/checkout@v2
         run: |
           go mod init blog
           go mod tidy
